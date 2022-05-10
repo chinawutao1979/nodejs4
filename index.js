@@ -1,7 +1,7 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+var http = require('http');
 
-app.get('/',(req,res) => res.send('hello wu tao'));
-
-app.listen(process.env.PORT || port, () => console.log('Example app listening at http://localhost:$(port)'));
+http.createServer(function (req, res) {
+res.writeHead(200, 
+{'Content-Type': 'text/html'});
+res.end('Hello World!');
+}).listen(3000);
